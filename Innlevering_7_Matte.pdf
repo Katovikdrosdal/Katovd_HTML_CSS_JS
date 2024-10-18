@@ -1,0 +1,278 @@
+
+Oppgave R6.5
+
+  D) 
+
+    For å finne derivatet av funksjonen f(x) = 4x³ - 5x² + 6x - 7, bruker vi reglen for derivasjon av potenser på hvert ledd:
+
+    1. Derivert av 4x³ er 12x².
+    2. Derivert av -5x² er -10x.
+    3. Derivert av 6x er 6.
+    4. Derivert av -7 er 0 (siden derivert av en konstant er 0).
+
+    Så derivatet av f(x) er:
+
+    f'(x) = 12x² - 10x + 6.
+
+Oppgave R6.7
+  
+  B)
+
+    For å finne derivatet av funksjonen f(x) = 5 + 9x - 7x², bruker vi reglen for derivasjon av potenser på hvert ledd.
+
+    1. Derivert av 5 (en konstant) er 0.
+    2. Derivert av 9x er 9.
+    3. Derivert av -7x² er 2 * (-7) * x = -14x.
+    
+    Derfor er derivatet av f(x):
+
+    f'(x) = 9 - 14x.
+
+  D)
+
+    For å finne derivatet av funksjonen f(x) = 3x² - 8x + 4, bruker vi reglen for derivasjon av potenser på hvert ledd:
+
+    1. Derivert av 3x² er 6x.
+    2. Derivert av -8x er -8.
+    3. Derivert av 4 (en konstant) er 0.
+
+    Derfor er derivatet av f(x):
+
+    f'(x) = 6x - 8.
+
+Oppgave R6.13
+
+    Gitt høydefunksjonen h(t) = 0.80 + 0.065t² − 0.0015t³, hvor t er antall år treet har levd, og t ∈ [0, 25]:
+
+A)  Hvor høyt er treet etter 15 år?
+    Dette kan finnes ved å sette inn t = 15 i høydeformelen h(t).
+
+B)  Hvor stor er den momentane veksthastigheten etter 15 år? 
+    Dette kan finnes ved å beregne den deriverte av h(t), kalt h'(t), og deretter evaluere den for t = 15.
+
+    For del A setter vi t = 15 inn i høydeformelen:  
+    h(15) = 0.80 + 0.065(15)² − 0.0015(15)³
+
+    For del B beregner vi først den deriverte av h(t):  
+    h'(t) = 2(0.065)t − 3(0.0015)t² = 0.13t − 0.0045t²  
+
+    Deretter setter vi inn t = 15 i h'(t):  
+    h'(15) = 0.13(15) − 0.0045(15)²
+
+    Svarene er som følger:
+
+    A:
+     Høyden på treet etter 15 år er omtrent 10,36 meter.
+
+    B:
+     Den momentane veksthastigheten til treet etter 15 år er omtrent 0,94 meter per år.
+
+R6.15
+  
+  D)
+
+    Den deriverte hjelper oss med å identifisere kritiske punkter hvor stigningstallet er null (potensielle maksimums- eller minimumspunkter). Den deriverte av funksjonen er:
+
+    f'(x) = d/dx [(1/3)x³ + (1/2)x² - 2x] = x² + x - 2
+
+    2. Sett f'(x) = 0 for å finne kritiske punkter:
+    For å finne de kritiske punktene, setter vi den deriverte lik null og løser:
+
+    x² + x - 2 = 0
+
+    Faktorisering av det kvadratiske uttrykket:
+
+    (x - 1)(x + 2) = 0
+
+    Dette gir de kritiske punktene:
+
+    x = 1 og x = -2
+
+    3. Bruk den andrederiverte:
+    For å avgjøre om de kritiske punktene er maksimums- eller minimumspunkter, finner vi den andrederiverte:
+
+    f''(x) = d/dx [x² + x - 2] = 2x + 1
+
+    4. Evaluer den andrederiverte ved de kritiske punktene:
+    - For x = 1:
+    f''(1) = 2(1) + 1 = 3 (siden denne er positiv, er x = 1 et lokalt minimum)
+
+    - For x = -2:
+    f''(-2) = 2(-2) + 1 = -3 (siden denne er negativ, er x = -2 et lokalt maksimum)
+
+    5. Beregn funksjonsverdiene ved de kritiske punktene:
+    - Når x = 1:
+    f(1) = (1/3)(1)³ + (1/2)(1)² - 2(1) = -7/6
+
+    - Når x = -2:
+    f(-2) = (1/3)(-2)³ + (1/2)(-2)² - 2(-2) = 2/3
+
+    Konklusjon:
+    - Det er et lokalt minimum ved (1, -7/6).
+    - Det er et lokalt maksimum ved (-2, 2/3).
+
+Oppgave 6.4.2
+
+  A)
+
+    For å finne overskuddsfunksjonen O(x) når bedriften produserer og selger x enheter per måned, må vi trekke fra kostnadene fra inntektene.
+
+    1. Inntektsfunksjonen R(x): Siden bedriften selger hver enhet for 250 kr, er den totale inntekten når de produserer og selger x enheter:
+
+    R(x) = 250x
+
+    2. Kostnadsfunksjonen K(x): Kostnadsfunksjonen er gitt som:
+
+    K(x) = 0,2x² + 60x + 30,000
+
+    3. Overskuddsfunksjonen O(x): Overskuddet er inntektene minus kostnadene:
+
+    O(x) = R(x) - K(x)
+
+    Ved å sette inn uttrykkene for R(x) og K(x):
+
+    O(x) = 250x - (0,2x² + 60x + 30,000)
+
+    Vi forenkler dette:
+
+    O(x) = 250x - 0,2x² - 60x - 30,000
+
+    O(x) = -0,2x² + 190x - 30,000
+
+    Dermed er uttrykket for overskuddsfunksjonen:
+
+    O(x) = -0,2x² + 190x - 30,000
+
+  B)
+    
+    For å finne ut hvor produksjonen gir størst overskudd, må vi finne toppunktet (maksimum) til overskuddsfunksjonen:
+
+    O(x) = -0,2x² + 190x - 30,000
+
+    Dette er en kvadratisk funksjon, og toppunktet kan finnes ved å bruke formelen for toppunktet til en andregradsfunksjon:
+
+    x = -b / (2a)
+
+    Her er a = -0,2 og b = 190. Vi kan nå beregne verdien for x som gir størst overskudd:
+
+    x = -190 / (2 * -0,2) = -190 / -0,4 = 475
+
+    Dermed gir en produksjon på 475 enheter per måned det største overskuddet.
+
+  C) 
+
+    Oppgaven spør om å finne det maksimale overskuddet for en bedrift, gitt kostnadsfunksjonen K(x) = 0.2x^2 + 60x + 30,000, der x er antall enheter produsert, og bedriften selger varen for 250 kr per enhet.
+
+    Trinn 1: Definer inntektsfunksjonen  
+    
+    Inntektsfunksjonen R(x) er pris per enhet multiplisert med antall solgte enheter, så:  
+    R(x) = 250x  
+
+    Trinn 2: Definer overskuddsfunksjonen  
+    
+    Overskuddsfunksjonen P(x) er inntektene minus kostnadene:  
+    P(x) = R(x) - K(x)  
+    Sett inn verdiene for R(x) og K(x):  
+    P(x) = 250x - (0.2x^2 + 60x + 30,000)  
+
+    Forenkling:  
+    P(x) = 250x - 0.2x^2 - 60x - 30,000  
+    P(x) = -0.2x^2 + 190x - 30,000  
+
+    Trinn 3: Maksimer overskuddsfunksjonen  
+    
+    For å finne verdien av x som maksimerer overskuddet, må vi ta den deriverte av P(x) og sette den lik null:  
+    P'(x) = -0.4x + 190  
+    Sett P'(x) = 0 for å finne kritiske punkter:  
+    -0.4x + 190 = 0  
+    0.4x = 190  
+    x = 190 / 0.4 = 475  
+
+    Trinn 4: Beregn det maksimale overskuddet  
+    
+    Nå som vi vet verdien av x, setter vi den tilbake i overskuddsfunksjonen for å finne det maksimale overskuddet:  
+    P(475) = -0.2(475)^2 + 190(475) - 30,000  
+    Først, beregn hver del:  
+    P(475) = -0.2(225625) + 90250 - 30,000  
+    P(475) = -45,125 + 90,250 - 30,000  
+    P(475) = 15,125  
+
+    Dermed er det maksimale overskuddet 15,125 kr.
+
+ Oppgave 6.4.18
+
+  A)
+  
+    For å finne uttrykket for farten v(t) til ballen, må vi ta den deriverte av høydefunksjonen h(t) med hensyn til tiden t.
+
+    Gitt:  
+    h(t) = 1,70 + 9,81t - 4,9t²
+
+    Farten v(t) er den deriverte av høyden h(t):
+
+    v(t) = deriver 1,70 + 9,81t - 4,9t² med hensyn til t.
+
+    Nå deriverer vi hvert ledd:
+
+    1. Den deriverte av konstanten 1,70 er 0.
+    2. Den deriverte av 9,81t er 9,81.
+    3. Den deriverte av -4,9t² er -9,8t (fordi vi bruker regelen for derivasjon av potenser).
+
+    Dermed blir fartsfunksjonen:
+
+    v(t) = 9,81 - 9,8t
+
+    Dette er uttrykket for farten til ballen som en funksjon av tiden.
+
+  B)
+
+    For å finne farten etter 1,5 sekunder, setter vi t = 1,5 inn i uttrykket for farten v(t):
+
+    Uttrykket for farten er:
+    v(t) = 9,81 - 9,8t
+
+    Sett inn t = 1,5:
+
+    v(1,5) = 9,81 - 9,8 * 1,5
+
+    v(1,5) = 9,81 - 14,7 = -4,89
+
+    Farten etter 1,5 sekunder er -4,89 meter per sekund. Det negative tegnet betyr at ballen beveger seg nedover etter denne tiden.
+
+  C)
+
+  For å finne når ballen når sin største høyde, kan vi bruke fartsfunksjonen v(t). På det høyeste punktet vil farten være 0, fordi ballen stopper et øyeblikk før den begynner å falle ned igjen.
+
+    Vi har fartsfunksjonen:
+
+    v(t) = 9,81 - 9,8t
+
+    For å finne når ballen når sin største høyde, setter vi v(t) = 0:
+
+    0 = 9,81 - 9,8t
+
+    Løs for t:
+
+    9,8t = 9,81
+
+    t = 9,81 / 9,8 = 1
+
+    Det tar altså 1 sekund før ballen når sin største høyde.
+
+  D)
+
+    For å finne hvor høyt ballen går, kan vi bruke høydefunksjonen h(t). Vi har allerede funnet ut at ballen når sin største høyde etter 1 sekund. Nå setter vi t = 1 inn i høydefunksjonen.
+
+    Høydefunksjonen er:
+
+    h(t) = 1,70 + 9,81t - 4,9t²
+
+    Sett inn t = 1:
+
+    h(1) = 1,70 + 9,81 * 1 - 4,9 * 1²
+
+    Regn ut:
+
+    h(1) = 1,70 + 9,81 - 4,9 = 6,61
+
+    Så ballen når en makshøyde på 6,61 meter.
