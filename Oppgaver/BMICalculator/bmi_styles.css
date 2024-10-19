@@ -1,61 +1,225 @@
+/* Base Styles */
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: 18px;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .container {
-    max-width: 400px;
-    margin: 50px auto;
-    padding: 20px;
-    background: white;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    padding: 40px;
+    width: 100%;
+    max-width: 450px;
+    transition: transform 0.3s;
 }
 
 h1 {
     text-align: center;
+    margin-bottom: 25px;
+    font-size: 28px;
+    color: #333;
 }
 
 .input-group {
-    margin: 15px 0;
+    position: relative;
+    margin-bottom: 20px;
 }
 
 label {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #555;
+    font-size: 18px;
 }
 
-input[type="number"] {
+input[type="number"], select {
     width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    padding: 15px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 18px;
+    transition: border-color 0.3s;
+}
+
+input[type="number"]:focus, select:focus {
+    border-color: #5cb85c;
+    outline: none;
 }
 
 button {
     width: 100%;
-    padding: 10px;
+    padding: 18px;
     background-color: #5cb85c;
     border: none;
     color: white;
-    font-size: 16px;
-    border-radius: 4px;
+    font-size: 20px;
+    border-radius: 8px;
     cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    margin-top: 10px;
 }
 
 button:hover {
     background-color: #4cae4c;
+    transform: translateY(-2px);
 }
 
 .result {
-    margin-top: 20px;
+    margin-top: 25px;
     text-align: center;
-    font-size: 18px;
+    font-size: 22px;
     color: #333;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    display: none;
+}
+
+/* History */
+.history {
+    margin-top: 30px;
+    padding: 15px;
+    background-color: #e6e6e6;
+    border-radius: 8px;
+    max-height: 150px;
+    overflow-y: auto;
+}
+
+/* Tooltip */
+.tooltip {
+    visibility: hidden;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+    width: 120px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.input-group:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background-color: #2c2c2c;
+    color: #f4f4f4;
+}
+
+body.dark-mode .container {
+    background-color: #333;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
+}
+
+body.dark-mode h1 {
+    color: #f4f4f4;
+}
+
+body.dark-mode input[type="number"], body.dark-mode select {
+    background-color: #444;
+    color: #f4f4f4;
+    border-color: #555;
+}
+
+body.dark-mode button {
+    background-color: #5cb85c;
+}
+
+body.dark-mode .result {
+    background-color: #444;
+    color: #f4f4f4;
+}
+
+.dark-mode-toggle {
+    position: fixed;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    background-color: #f0f2f5;
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.dark-mode-toggle:hover {
+    background-color: #ddd;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.moon-icon {
+    width: 28px;
+    height: 28px;
+    background-color: #555;
+    border-radius: 50%;
+    box-shadow: inset 10px 0 0 0 #f0f2f5;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+body.dark-mode .moon-icon {
+    background-color: #f4f4f4;
+    box-shadow: inset 10px 0 0 0 #333;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    body {
+        font-size: 16px;
+    }
+
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    button {
+        font-size: 18px;
+        padding: 16px;
+    }
+
+    .result {
+        font-size: 20px;
+    }
+
+    .dark-mode-toggle {
+        right: 10px;
+        width: 45px;
+        height: 45px;
+    }
+
+    .moon-icon {
+        width: 22px;
+        height: 22px;
+    }
 }
