@@ -100,6 +100,13 @@ button:hover {
     overflow-y: auto;
 }
 
+body.dark-mode .history {
+    background-color: #444;  /* Darker background for dark mode */
+    color: #f4f4f4;          /* Lighter text for readability */
+    border: 1px solid #555;   /* Optional: add a subtle border */
+}
+
+
 /* Tooltip */
 .tooltip {
     visibility: hidden;
