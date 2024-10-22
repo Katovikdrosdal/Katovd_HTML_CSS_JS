@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping List</title>
+    <link rel="stylesheet" href="Js4.5.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Shopping List</h1>
+        <form id="shoppingForm">
+            <label><input type="checkbox" name="item" value="Milk"> Milk</label><br>
+            <label><input type="checkbox" name="item" value="Eggs"> Eggs</label><br>
+            <label><input type="checkbox" name="item" value="Bread"> Bread</label><br>
+            <label><input type="checkbox" name="item" value="Butter"> Butter</label><br>
+            <label><input type="checkbox" name="item" value="Cheese"> Cheese</label><br>
+        </form>
+        <button onclick="showSelectedItems()">Show Selected Items</button>
+        <div id="selectedItems"></div>
+    </div>
+
+    <script src="Js4.5.js"></script>
+
+</body>
+</html>

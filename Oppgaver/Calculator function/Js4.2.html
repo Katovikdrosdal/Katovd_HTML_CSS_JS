@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="Js.4.2.css">
+    <script src="Js4.2.js" defer></script>
+</head>
+
+<body>
+    <div>
+        <h2>Simple Calculator</h2>
+        <input type="number" id="Number1" placeholder="First Number">
+        <input type="number" id="Number2" placeholder="Second Number">
+
+        <select id="Method">
+            <option value="Add">Add</option>
+            <option value="Subtract">Subtract</option>
+            <option value="Multiply">Multiply</option>
+            <option value="Divide">Divide</option>
+        </select>
+
+        <button onclick="Calculate()">Calculate</button>
+        <div id="Output"></div>
+    </div>
+</body>
+
+</html>
