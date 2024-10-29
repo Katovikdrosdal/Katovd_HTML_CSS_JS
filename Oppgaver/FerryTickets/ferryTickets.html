@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket Order Form</title>
+    <link rel="stylesheet" href="ferryTickets.css">
+</head>
+<body>
+    <form id="ticketForm">
+        <h2>Order Your Tickets</h2>
+
+        <label for="numAdults">Number of Adults:</label>
+        <input type="number" id="numAdults" placeholder="Enter number of adults" min="0" required>
+
+        <label for="numChildren">Number of Children:</label>
+        <input type="number" id="numChildren" placeholder="Enter number of children" min="0" required>
+
+        <label for="numCompliments">Number of Courtesy Passengers:</label>
+        <input type="number" id="numCompliments" placeholder="Enter number of compliments" min="0" required>
+
+        <label>Journey Type:</label>
+        <input type="radio" id="singleJourney" name="journeyType" value="single" checked>
+        <label for="singleJourney">Single Journey</label>
+        <input type="radio" id="roundTrip" name="journeyType" value="roundTrip">
+        <label for="roundTrip">Round Trip</label>
+
+        <button type="button" onclick="calculatePrice()">Order Tickets</button>
+    </form>
+
+    <p id="result"></p>
+
+    <script src="ferryTickets.js"></script>
+</body>
+</html>

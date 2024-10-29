@@ -1,0 +1,84 @@
+.win {
+    background-color: green;
+    color: white;
+}
+
+.loss {
+    background-color: red;
+    color: white;
+    font-size: 20px; 
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #2d2d2d;
+    color: #e0e0e0;
+}
+
+h1 {
+    color: #ffffff;
+    margin-bottom: 20px;
+    font-size: 24px;
+    letter-spacing: 1px;
+}
+
+.container {
+    text-align: center;
+    width: 100%;
+    max-width: 350px;
+    padding: 30px;
+    border-radius: 12px;
+    background-color: #3a3a3a;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+.input-field {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    border: 1px solid #555;
+    border-radius: 8px;
+    background-color: #4a4a4a;
+    color: #ffffff;
+}
+
+.input-field::placeholder {
+    color: #bbbbbb;
+}
+
+.btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #ff5c5c;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #ff3333;
+}
+
+.message {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #e0e0e0;
+    line-height: 1.5;
+}

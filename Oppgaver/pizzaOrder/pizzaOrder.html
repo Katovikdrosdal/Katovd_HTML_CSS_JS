@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Order</title>
+    <link rel="stylesheet" href="pizzaOrder.css">
+</head>
+<body>
+<div class="container">
+    <h2>Order Your Pizza</h2>
+    
+    <div class="option-group">
+        <label>Size:</label>
+        <div class="option"><input type="radio" name="size" value="Large" checked> Large ($12)</div>
+        <div class="option"><input type="radio" name="size" value="Medium"> Medium ($10)</div>
+        <div class="option"><input type="radio" name="size" value="Small"> Small ($8)</div>
+    </div>
+    
+    <div class="option-group">
+        <label>Filling:</label>
+        <div class="option"><input type="radio" name="filling" value="Chicken" checked> Chicken</div>
+        <div class="option"><input type="radio" name="filling" value="Vegetarian"> Vegetarian</div>
+        <div class="option"><input type="radio" name="filling" value="Taco"> Taco</div>
+        <div class="option"><input type="radio" name="filling" value="Pepperoni"> Pepperoni</div>
+    </div>
+    
+    <div class="option-group">
+        <label>Crust:</label>
+        <div class="option"><input type="radio" name="crust" value="Regular" checked> Regular</div>
+        <div class="option"><input type="radio" name="crust" value="Thin"> Thin</div>
+        <div class="option"><input type="radio" name="crust" value="Cheese-Stuffed"> Cheese-Stuffed ($2 extra)</div>
+        <div class="option"><input type="radio" name="crust" value="Gluten-Free"> Gluten-Free ($2 extra)</div>
+    </div>
+    
+    <div class="option-group">
+        <label>Toppings (choose up to 3, $1 each):</label>
+        <div class="option"><input type="checkbox" name="topping" value="Mushrooms"> Mushrooms</div>
+        <div class="option"><input type="checkbox" name="topping" value="Onions"> Onions</div>
+        <div class="option"><input type="checkbox" name="topping" value="Olives"> Olives</div>
+        <div class="option"><input type="checkbox" name="topping" value="Green Peppers"> Green Peppers</div>
+        <div class="option"><input type="checkbox" name="topping" value="Black Olives"> Black Olives</div>
+        <div class="option"><input type="checkbox" name="topping" value="Jalapenos"> Jalapenos</div>
+        <div class="option"><input type="checkbox" name="topping" value="Pineapple"> Pineapple</div>
+        <div class="option"><input type="checkbox" name="topping" value="Extra Cheese"> Extra Cheese</div>
+        <div class="option"><input type="checkbox" name="topping" value="Basil"> Basil</div>
+        <div class="option"><input type="checkbox" name="topping" value="Tomatoes"> Tomatoes</div>
+    </div>
+
+    <button onclick="displayOrder()">Place Order</button>
+</div>
+<script src="pizzaOrder.js"></script>
+</body>
+</html>
