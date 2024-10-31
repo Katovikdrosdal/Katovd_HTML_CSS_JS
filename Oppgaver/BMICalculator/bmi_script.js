@@ -23,7 +23,7 @@ function toggleUnits() {
 }
 
 function validateInput(value) {
-    return value > 0; // Ensures the value is positive
+    return value > 0; 
 }
 
 function calculateBMI() {
@@ -69,7 +69,7 @@ function calculateBMI() {
         resultDiv.innerHTML = `Your BMI is ${bmi} (${category})`;
         resultDiv.style.display = 'block';
 
-        // Add to BMI History
+        
         bmiHistory.push(`BMI: ${bmi} (${category})`);
         displayHistory();
     } else {

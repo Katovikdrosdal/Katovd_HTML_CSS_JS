@@ -1,4 +1,4 @@
-/* Base Styles */
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -90,7 +90,7 @@ button:hover {
     display: none;
 }
 
-/* History */
+
 .history {
     margin-top: 30px;
     padding: 15px;
@@ -101,13 +101,12 @@ button:hover {
 }
 
 body.dark-mode .history {
-    background-color: #444;  /* Darker background for dark mode */
-    color: #f4f4f4;          /* Lighter text for readability */
-    border: 1px solid #555;   /* Optional: add a subtle border */
+    background-color: #444;  
+    color: #f4f4f4;         
+    border: 1px solid #555;   
 }
 
 
-/* Tooltip */
 .tooltip {
     visibility: hidden;
     background-color: #333;
@@ -196,7 +195,7 @@ body.dark-mode .moon-icon {
     box-shadow: inset 10px 0 0 0 #333;
 }
 
-/* Responsive */
+
 @media (max-width: 480px) {
     body {
         font-size: 16px;

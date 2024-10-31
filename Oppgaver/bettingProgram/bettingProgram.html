@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Betting Program</title>
+  <link rel="stylesheet" href="bettingProgram.css">
+</head>
+<body>
+
+  <h2>Soccer match betting program</h2>
+  <label for="betInput">Enter your bet for the match (H for Home, D for Draw, A for Away):</label>
+  <input type="text" id="betInput" maxlength="1" placeholder="H, D, or A">
+  <button onclick="checkBet()">Submit</button>
+  <p id="result"></p>
+
+  <div class="dark-mode-toggle" onclick="toggleDarkMode()">
+    <i class="moon-icon"></i>
+  </div>
+
+  <script src="bettingProgram.js"></script>
+
+</body>
+</html>
