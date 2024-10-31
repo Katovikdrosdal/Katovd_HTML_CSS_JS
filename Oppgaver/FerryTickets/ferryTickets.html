@@ -19,11 +19,11 @@
         <label for="numCompliments">Number of Courtesy Passengers:</label>
         <input type="number" id="numCompliments" placeholder="Enter number of compliments" min="0" required>
 
-        <label>Journey Type:</label>
-        <input type="radio" id="singleJourney" name="journeyType" value="single" checked>
-        <label for="singleJourney">Single Journey</label>
-        <input type="radio" id="roundTrip" name="journeyType" value="roundTrip">
-        <label for="roundTrip">Round Trip</label>
+        <label for="journeyType">Journey Type:</label>
+        <select id="journeyType">
+        <option value="single">Single Journey</option>
+        <option value="roundTrip">Round Trip</option>
+        </select>
 
         <button type="button" onclick="calculatePrice()">Order Tickets</button>
     </form>
@@ -33,3 +33,5 @@
     <script src="ferryTickets.js"></script>
 </body>
 </html>
+
+

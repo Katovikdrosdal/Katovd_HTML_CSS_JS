@@ -3,7 +3,8 @@ function calculatePrice() {
     const numChildren = parseInt(document.getElementById("numChildren").value) || 0;
     const numCompliments = parseInt(document.getElementById("numCompliments").value) || 0;
 
-    const journeyType = document.querySelector('input[name="journeyType"]:checked').value;
+    const journeyType = document.getElementById("journeyType").value;
+
 
     const priceAdult = 100;
     const priceChild = 50;
@@ -17,3 +18,4 @@ function calculatePrice() {
 
     document.getElementById("result").textContent = `The total price for ${numAdults} adults, ${numChildren} children, and ${numCompliments} courtesy passengers is ${totalPrice} kroner. Have a good trip!`;
 }
+

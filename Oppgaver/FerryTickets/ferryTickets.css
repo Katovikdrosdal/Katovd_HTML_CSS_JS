@@ -62,3 +62,30 @@ button:hover {
     font-size: 16px;
     color: #BB86FC;
 }
+
+select {
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+    color: #E0E0E0;
+    background-color: #333;
+    border: 1px solid #333;
+    border-radius: 4px;
+    margin-top: 5px;
+    height: 38px; 
+    box-sizing: border-box; 
+    appearance: none;
+}
+
+
+select:focus {
+    outline: none;
+    border-color: #6200EE;
+}
+
+label[for="journeyType"] {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #B0B0B0;
+}
+
