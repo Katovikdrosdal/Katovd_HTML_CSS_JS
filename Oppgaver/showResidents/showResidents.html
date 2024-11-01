@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Residents List</title>
+    <link rel="stylesheet" href="showResidents.css">
+    <button onclick="toggleDarkMode()" style="position: absolute; top: 10px; right: 10px;">Toggle Dark Mode</button>
+</head>
+<body>
+    <h2>Residents of Springfield</h2>
+    <button onclick="showResidents()">Show residents</button>
+    <input type="text" id="newResident" placeholder="Enter new resident name">
+    <button onclick="addResident()">Add Resident</button>
+    <button onclick="sortResidents()">Sort Residents</button>
+    <button onclick="clearResidents()">Clear Residents</button>
+    <div id="residentsList"></div>
+
+    <script src="showResidents.js"></script>
+</body>
+</html>
