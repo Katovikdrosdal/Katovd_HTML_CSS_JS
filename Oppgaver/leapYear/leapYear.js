@@ -1,3 +1,9 @@
+document.getElementById('yearInput').addEventListener('keypress', function(event) {
+    if (event.key === 'Enter') {
+        checkLeapYear();
+    }
+});
+
 function checkLeapYear() {
     const year = document.getElementById('yearInput').value;
     const result = document.getElementById('result');
