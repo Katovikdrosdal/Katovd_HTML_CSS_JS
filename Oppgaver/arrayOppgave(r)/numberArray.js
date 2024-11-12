@@ -1,3 +1,7 @@
+function toggleDarkMode() {
+    document.body.classList.toggle('dark-mode');
+}
+
 /**
  * Tests is a number is a prime.
  * @param {Number} num A natural number.
@@ -72,7 +76,7 @@ function primes(numbers) {
  * @returns {Number} The largest number in the array
  */
 function max(numbers) {
-    // TODO
+    return Math.max(...numbers);
 }
 
 /**
@@ -81,7 +85,7 @@ function max(numbers) {
  * @returns {Number} The smallest number in the array.
  */
 function min(numbers) {
-    // TODO
+    return Math.min(...numbers);
 }
 
 /**
@@ -91,7 +95,7 @@ function min(numbers) {
  * @returns {T[]} A new array with no duplicates containing all the elements from the original array.
  */
 function unique(arr) {
-    // TODO
+    return [...new Set (arr)];
 }
 
 /**
@@ -117,7 +121,7 @@ function shuffle(arr) {
  * @returns A new array with the sorted elements.
  */
 function sort(numbers) {
-    // TODO
+    return [...numbers].sort ((a, b) => a - b);
 }
 
 /**
@@ -125,8 +129,8 @@ function sort(numbers) {
  * @param {Number[]} numbers An array of numbers.
  * @returns A new array containing all numbers of the original array multiplied by 69.
  */
-function mult69(arr) {
-    // TODO
+function mult69(numbers) {
+    return numbers.map(n => n * 69);
 }
 
 /**
@@ -135,7 +139,7 @@ function mult69(arr) {
  * @returns {Number} The product of all numbers in the array.
  */
 function product(numbers) {
-    // TODO
+   return numbers.reduce((prod, n) => prod * n, 1);
 }
 
 let result = {
@@ -163,7 +167,10 @@ function update() {
     let inputString = document.getElementById("input").value;
     let numbers = parseNumbers(inputString);
     document.getElementById("option").innerText = option;
-    document.getElementById("result").innerText = f(numbers);
+    let r = f(numbers)
+    if (r instanceof Array)
+        r = r.join(", ")
+    document.getElementById("result").innerText = r;
 }
 
 /**
@@ -172,7 +179,7 @@ function update() {
  * @return {Number[]} An array of numbers.
  */
 function parseNumbers(str) {
-    return str.split(/[^\d]/).filter(x => x != '' && !isNaN(x)).map(n => parseInt(n));
+    return str.split(/[^\d|-]/).filter(x => x != '' && !isNaN(x)).map(n => parseInt(n));
 }
 
 // generate html buttons

@@ -1,24 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Display Array</title>
+		<link rel="stylesheet" href="numberArray.css" />
+	</head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Display Array</title>
+	<body>
+		<div class="container">
+			<h1>Array Values</h1>
+			<div>
+				<label for="input">Input numbers:</label>
+				<input type="text" id="input" oninput="update()" />
+			</div>
+			<div id="buttons"></div>
+			<p id="option"></p>
+			<p id="result"></p>
+		</div>
 
-</head>
+		<div class="dark-mode-toggle" onclick="toggleDarkMode()">
+			<i class="moon-icon"></i>
+		</div>
 
-<body>
-    <h1>Array Values</h1>
-    <div>
-        <label for="input">Input numbers:</label>
-        <input type="text" id="input" oninput=update()>
-    </div>
-    <div id="buttons"></div>
-    <p id="option"></p>
-    <p id="result"></p>
-
-    <script src="numberArray.js"></script>
-</body>
-
+		<script src="numberArray.js"></script>
+	</body>
 </html>
