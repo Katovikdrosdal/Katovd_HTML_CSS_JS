@@ -1,5 +1,17 @@
 let number = [34, 53, 2, 3, 34, 26, 26, 85, 3, 4, 98, 2, 12];
 
+let result = {
+    "Numbers": number,
+    "Reversed": [...number].reverse(),
+    "Every other": number.filter((_, i) => i % 2 == 0),
+    "Less than 10": number.filter(n => n < 10),
+    "Even": number.filter(n => n % 2 == 0),
+    "Sum": [number.reduce((sum, n) => sum + n, 0)],
+    "Primes": number.filter(isPrime),
+}
+
+document.getElementById("result2").innerText = Object.entries(result).map(([key, value]) => `${key}: ${value.join(', ')}`).join('\n');
+
 function printArray() {
     let result = "";
 
