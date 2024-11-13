@@ -1,3 +1,4 @@
+// Given array
 let arr = ["Hans", "Ole", "Nils", "Olav", "Per", "Knut", "Kari", "Line", "Pia"];
 
 function pickThreeRandomNames(arr) {
