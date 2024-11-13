@@ -1,0 +1,28 @@
+body {
+    background-color: #121212;
+    color: #e0e0e0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+h1, h2 {
+    color: #ffffff;
+    text-align: center;
+}
+
+#output p {
+    color: #e0e0e0;
+}
+
+#output p:nth-child(even) {
+    color: #64b5f6; /* Light Blue for even indexed numbers */
+}
+
+#output p:nth-child(odd) {
+    color: #ef5350; /* Light Red for odd indexed numbers */
+}
