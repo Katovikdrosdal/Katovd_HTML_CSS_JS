@@ -36,12 +36,12 @@ h1 {
     margin: 20px auto;              /* Center list with automatic left-right margins */
     width: 100%;
 }
-/* Removes bulletpoints and adds paddinng*/
+/* Removes bullet points and adds padding to unordered lists */
 ul {
-    list-style-type: none;
-    padding-right: 40px;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    list-style-type: none; /* Removes default bullet points */
+    padding-right: 40px;   /* Adds right padding for spacing */
+    padding-top: 20px;     /* Adds top padding for spacing */
+    padding-bottom: 20px;  /* Adds bottom padding for spacing */
 }
 
 /* Styling for each main duck entry in the grid */
