@@ -37,15 +37,18 @@ const ducks = [
   },
 ];
 
-let list = document.getElementById("ducks-list");
+let outerList = document.getElementById("ducks-list");
 
 for (let duck of ducks) {
-  let li = document.createElement('li');
+  let outerEntry = document.createElement('li');
+  let innerList = document.createElement('ul');
+
   for (let [key, value] of Object.entries(duck)) {
-    let text = document.createTextNode(`${key}: ${value}`);
-    let linebreak = document.createElement('br');
-    li.appendChild(text);
-    li.appendChild(linebreak);
+    let innerEntry = document.createElement('li');
+    innerEntry.innerHTML = `${key}: ${value}`;
+    innerList.appendChild(innerEntry);
   }
-  list.appendChild(li);
+
+  outerEntry.appendChild(innerList);
+  outerList.appendChild(outerEntry);
 }
