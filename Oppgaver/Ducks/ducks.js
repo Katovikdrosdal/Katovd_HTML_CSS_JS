@@ -38,16 +38,16 @@ const ducks = [
 ];
 
 let output = "";
-for (let i = 0; i < ducks.length; i++) {
+for (let duck of ducks) {
   output += 
 `<li> 
-    Firstname: ${ducks[i].firstName}<br/> 
-    Lastname: ${ducks[i].lastName}<br/>  
-    Address: ${ducks[i].address}<br/>  
-    Phonenumber: ${ducks[i].phoneNumber}<br/>
-    Workphone: ${ducks[i].workPhoneNumber}<br/>
-    Email: ${ducks[i].eMail}<br/>
-    WorkEmail: ${ducks[i].workEmail} 
+    Firstname: ${duck.firstName}<br/> 
+    Lastname: ${duck.lastName}<br/>  
+    Address: ${duck.address}<br/>  
+    Phonenumber: ${duck.phoneNumber}<br/>
+    Workphone: ${duck.workPhoneNumber}<br/>
+    Email: ${duck.eMail}<br/>
+    WorkEmail: ${duck.workEmail} 
 </li>`;
 }
 
