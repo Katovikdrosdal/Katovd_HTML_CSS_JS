@@ -37,18 +37,15 @@ const ducks = [
   },
 ];
 
-let output = "";
-for (let duck of ducks) {
-  output += 
-`<li> 
-    Firstname: ${duck.firstName}<br/> 
-    Lastname: ${duck.lastName}<br/>  
-    Address: ${duck.address}<br/>  
-    Phonenumber: ${duck.phoneNumber}<br/>
-    Workphone: ${duck.workPhoneNumber}<br/>
-    Email: ${duck.eMail}<br/>
-    WorkEmail: ${duck.workEmail} 
-</li>`;
-}
+let list = document.getElementById("ducks-list");
 
-document.getElementById("ducks-list").innerHTML = output;
+for (let duck of ducks) {
+  let li = document.createElement('li');
+  for (let [key, value] of Object.entries(duck)) {
+    let text = document.createTextNode(`${key}: ${value}`);
+    let linebreak = document.createElement('br');
+    li.appendChild(text);
+    li.appendChild(linebreak);
+  }
+  list.appendChild(li);
+}
