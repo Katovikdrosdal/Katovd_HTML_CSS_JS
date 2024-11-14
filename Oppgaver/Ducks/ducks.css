@@ -18,36 +18,33 @@ h1 {
     width: 100%;                    /* Full width for proper centering */
 }
 
-/* Container for duck list to center-align the entire list */
+/* Updated container to use grid layout for 2x2 display */
 #ducks-container {
     display: flex;
-    justify-content: center;        /* Center-align the list horizontally */
-    width: 100%;                    /* Full width of the viewport */
-    padding: 0 20px;                /* Add horizontal padding to align better within container */
+    justify-content: center;        /* Center-align the container */
+    width: 100%;
+    padding: 0 20px;
 }
 
-/* Styling for the main list container for ducks */
 #ducks-list {
-    list-style-type: none;          /* Remove default bullet points */
-    padding: 0;                     /* Remove padding */
-    max-width: 600px;               /* Set max width for better readability */
+    display: grid;                  /* Use grid display */
+    grid-template-columns: repeat(2, 1fr);  /* Create a 2-column grid */
+    gap: 20px;                      /* Add some space between the items */
+    list-style-type: none;          /* Remove bullet points */
+    padding: 0;
+    max-width: 800px;               /* Set max width for better readability */
     margin: 20px auto;              /* Center list with automatic left-right margins */
-    width: 100%;                    /* Full width within its container */
+    width: 100%;
 }
 
-/* Styling for each main duck entry */
+/* Styling for each main duck entry in the grid */
 #ducks-list li {
-    list-style-type: none;          /* Ensure no bullets are shown for each duck entry */
     background-color: #ffffff;      /* White background for each entry */
     border: 1px solid #ccc;         /* Light gray border around each entry */
     padding: 20px;                  /* Increased padding for balanced spacing */
-    margin: 15px 0;                 /* Vertical space between entries */
     border-radius: 10px;            /* Rounded corners for a softer appearance */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Slightly larger shadow for depth */
-    line-height: 1.6;               /* Improved line height for readability */
-    font-size: 1rem;                /* Standard font size for entries */
     text-align: left;               /* Left-align text within each entry for readability */
-    width: calc(100% - 40px);       /* Adjust width to add padding inside the container */
     box-sizing: border-box;         /* Include padding and border in total width */
 }
 
@@ -72,4 +69,82 @@ a {
 /* Hover effect for links */
 a:hover {
     text-decoration: underline;     /* Add underline on hover for visual feedback */
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background-color: #2c2c2c;      /* Dark background for the page */
+    color: #f4f4f4;                 /* Light text for readability in dark mode */
+}
+
+body.dark-mode h1 {
+    color: #ffcc00;                 /* Bright yellow color for better readability in dark mode */
+}
+
+body.dark-mode #ducks-list li {
+    background-color: #444;         /* Darker background for list items in dark mode */
+    color: #f4f4f4;                 /* Light text color for list items in dark mode */
+    border-color: #555;             /* Dark border for list items in dark mode */
+}
+
+.dark-mode-toggle {
+    position: fixed;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    background-color: #f0f2f5;      /* Light gray background for the toggle button */
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.dark-mode-toggle:hover {
+    background-color: #ddd;         /* Darker gray for hover effect */
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.moon-icon {
+    width: 28px;
+    height: 28px;
+    background-color: #555;         /* Dark color for moon icon */
+    border-radius: 50%;
+    box-shadow: inset 10px 0 0 0 #f0f2f5; /* Moon crescent effect */
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+body.dark-mode .moon-icon {
+    background-color: #f4f4f4;      /* Light color for moon icon in dark mode */
+    box-shadow: inset 10px 0 0 0 #333; /* Moon crescent effect in dark mode */
+}
+
+/* Responsive Styles */
+@media (max-width: 480px) {
+    body {
+        font-size: 16px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    #ducks-list li {
+        padding: 16px;              /* Reduce padding for smaller screens */
+    }
+
+    .dark-mode-toggle {
+        right: 10px;
+        width: 45px;
+        height: 45px;
+    }
+
+    .moon-icon {
+        width: 22px;
+        height: 22px;
+    }
 }

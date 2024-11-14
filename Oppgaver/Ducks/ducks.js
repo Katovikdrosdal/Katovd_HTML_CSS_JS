@@ -1,3 +1,9 @@
+// Darkmode function
+function toggleDarkMode() {
+  document.body.classList.toggle('dark-mode');
+}
+
+
 // Ducks data array - each object contains information about a specific duck character
 const ducks = [
   {
