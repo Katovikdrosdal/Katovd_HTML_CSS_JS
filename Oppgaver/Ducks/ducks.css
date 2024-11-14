@@ -1,50 +1,75 @@
+/* Basic page styling */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f8ff;
-    color: #333;
-    margin: 0;
-    padding: 0;
+    font-family: Arial, sans-serif; /* Set a clean, sans-serif font for readability */
+    background-color: #f0f8ff;      /* Light blue background for a soft look */
+    color: #333;                    /* Dark gray text color for good contrast */
+    margin: 0;                      /* Remove default margin */
+    padding: 0;                     /* Remove default padding */
+    display: flex;
+    flex-direction: column;         /* Stack elements vertically */
+    align-items: center;            /* Center align elements horizontally */
 }
 
+/* Main header styling */
 h1 {
-    text-align: center;
-    color: #004080;
-    margin-top: 20px;
+    color: #004080;                 /* Deep blue color for header text */
+    margin-top: 20px;               /* Space above the header */
+    text-align: center;             /* Center-align the header text */
+    width: 100%;                    /* Full width for proper centering */
 }
 
+/* Container for duck list to center-align the entire list */
+#ducks-container {
+    display: flex;
+    justify-content: center;        /* Center-align the list horizontally */
+    width: 100%;                    /* Full width of the viewport */
+    padding: 0 20px;                /* Add horizontal padding to align better within container */
+}
+
+/* Styling for the main list container for ducks */
 #ducks-list {
-    list-style-type: none;
-    padding: 0;
-    max-width: 600px;
-    margin: 20px auto;
+    list-style-type: none;          /* Remove default bullet points */
+    padding: 0;                     /* Remove padding */
+    max-width: 600px;               /* Set max width for better readability */
+    margin: 20px auto;              /* Center list with automatic left-right margins */
+    width: 100%;                    /* Full width within its container */
 }
 
+/* Styling for each main duck entry */
 #ducks-list li {
-    background-color: #ffffff;
-    border: 1px solid #ccc;
-    padding: 15px;
-    margin-bottom: 10px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    line-height: 1.6;
-    font-size: 1rem;
+    list-style-type: none;          /* Ensure no bullets are shown for each duck entry */
+    background-color: #ffffff;      /* White background for each entry */
+    border: 1px solid #ccc;         /* Light gray border around each entry */
+    padding: 20px;                  /* Increased padding for balanced spacing */
+    margin: 15px 0;                 /* Vertical space between entries */
+    border-radius: 10px;            /* Rounded corners for a softer appearance */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Slightly larger shadow for depth */
+    line-height: 1.6;               /* Improved line height for readability */
+    font-size: 1rem;                /* Standard font size for entries */
+    text-align: left;               /* Left-align text within each entry for readability */
+    width: calc(100% - 40px);       /* Adjust width to add padding inside the container */
+    box-sizing: border-box;         /* Include padding and border in total width */
 }
 
+/* Hover effect for each entry for a subtle visual cue */
 #ducks-list li:hover {
-    background-color: #e6f7ff;
+    background-color: #e6f7ff;      /* Light blue background on hover */
 }
 
+/* Additional styling for contact information text */
 .contact-info {
-    margin-top: 10px;
-    font-size: 0.9rem;
-    color: #555;
+    margin-top: 10px;               /* Space above contact info section */
+    font-size: 0.9rem;              /* Slightly smaller font for secondary info */
+    color: #555;                    /* Dark gray color for distinction from main text */
 }
 
+/* Styling for all anchor links */
 a {
-    color: #004080;
-    text-decoration: none;
+    color: #004080;                 /* Deep blue for links */
+    text-decoration: none;          /* Remove underline from links */
 }
 
+/* Hover effect for links */
 a:hover {
-    text-decoration: underline;
+    text-decoration: underline;     /* Add underline on hover for visual feedback */
 }
