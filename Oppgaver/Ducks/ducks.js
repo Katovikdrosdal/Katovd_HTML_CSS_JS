@@ -3,7 +3,6 @@ function toggleDarkMode() {
   document.body.classList.toggle('dark-mode');
 }
 
-
 // Ducks data array - each object contains information about a specific duck character
 const ducks = [
   {
@@ -55,6 +54,19 @@ function toReadableCamelCase(str) {
         .replace(/^./, s => s.toUpperCase()); // Capitalizes the first letter of the resulting string
 }
 
+// Recursive function to generate HTML list elements from an object
+function createList(data, keys) {
+  const list = document.createElement('ul');
+  
+  for (let key of keys) {
+    let listItem = document.createElement('li');
+    listItem.innerHTML = `${toReadableCamelCase(key)}: ${data[key]}`;
+    list.appendChild(listItem);
+  }
+
+  return list;
+}
+
 // Get the HTML element with ID 'ducks-list' where the list of ducks will be rendered
 let outerList = document.getElementById("ducks-list");
 
@@ -63,23 +75,13 @@ for (let duck of ducks) {
   // Create an outer list item to represent each duck in the main list
   let outerEntry = document.createElement('li');
   
-  // Create an inner unordered list to store the individual properties of each duck
-  let innerList = document.createElement('ul');
-
-  // Iterate over each key-value pair in the duck object
-  for (let [key, value] of Object.entries(duck)) {
-    // Create a list item for each property of the duck
-    let innerEntry = document.createElement('li');
-
-    // Format the key into a readable format and set it with the value
-    innerEntry.innerHTML = `${toReadableCamelCase(key)}: ${value}`;
-
-    // Append the formatted list item to the inner list
-    innerList.appendChild(innerEntry);
-  }
-
-  // Append the inner list (with all properties) to the outer entry
-  outerEntry.appendChild(innerList);
+  // Create two inner unordered lists for the different sets of properties
+  let personalInfoList = createList(duck, ['firstName', 'lastName', 'address']);
+  let contactInfoList = createList(duck, ['phoneNumber', 'workPhoneNumber', 'eMail', 'workEmail']);
+  
+  // Append the inner lists to the outer entry
+  outerEntry.appendChild(personalInfoList);
+  outerEntry.appendChild(contactInfoList);
 
   // Append the outer entry to the main ducks list in the HTML
   outerList.appendChild(outerEntry);
