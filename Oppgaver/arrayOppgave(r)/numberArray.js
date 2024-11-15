@@ -421,18 +421,37 @@ function update() {
     let f = result[option];
     let inputString = document.getElementById("input").value;
     let numbers = parseNumbers(inputString);
+    let divisor = parseInt(document.getElementById("divisor").value);
+
+    if (option === "Divisible By") {
+        if (isNaN(divisor) || divisor === 0) {
+            document.getElementById("result").innerText = "Please enter a valid non-zero divisor.";
+            return;
+        }
+        f = (nums) => divisibleBy(nums, divisor); // Update function to use the divisor
+    }
+
     if (!Array.isArray(numbers)) {
         console.log("Parsed input is not an array!");
         return;
     }
-    numbers.push(92);  // Adding 92 to the array
+
+    numbers.push(92); // Adding 92 to the array
     numbers.shift();  // Removes the first number of the array
+
     document.getElementById("option").innerText = option;
     let r = f(numbers);
-    if (r instanceof Array)
+
+    if (option === "Number Frequency" && typeof r === "object") {
+        r = Object.entries(r).map(([key, value]) => `${key}: ${value}`).join(", ");
+    } else if (r instanceof Array) {
         r = r.join(", ");
+    }
+
     document.getElementById("result").innerText = r;
 }
+
+
 
 // generate html buttons
 for (let [name, f] of Object.entries(result)) {
