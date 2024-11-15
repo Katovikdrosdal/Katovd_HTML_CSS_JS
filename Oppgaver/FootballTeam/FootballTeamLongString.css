@@ -1,0 +1,72 @@
+/* General styling for the webpage */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9; /* Light grey background for better contrast */
+    color: #333; /* Dark grey text for good readability */
+    margin: 0;
+    padding: 20px;
+}
+
+/* Header styling */
+h1 {
+    text-align: center; /* Center aligns the header */
+    color: #005f99; /* Dark blue color for the header text */
+}
+
+/* Button container styling for consistent layout */
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Space between buttons */
+    margin: 20px 0;
+}
+
+/* Styling for the team list */
+#team-list {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0;
+    max-width: 600px; /* Constrain list width for better readability */
+    margin: 0 auto; /* Center the list on the page */
+}
+
+/* Individual list item styling for each player */
+#team-list li {
+    background-color: #e2f0fb; /* Light blue background */
+    margin: 10px 0;
+    padding: 15px; /* Add padding for spacing */
+    border-radius: 8px; /* Rounded corners for a modern look */
+    border-left: 5px solid #005f99; /* Blue left border to highlight each item */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add subtle shadow for depth */
+}
+
+/* Button styling for interactivity */
+button {
+    display: inline-block;
+    background-color: #005f99; /* Dark blue background */
+    color: #fff; /* White text color */
+    border: none;
+    border-radius: 5px; /* Rounded button corners */
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer; /* Show pointer on hover */
+    transition: background-color 0.3s ease; /* Smooth color transition */
+}
+
+/* Button hover effect for better user feedback */
+button:hover {
+    background-color: #004a7a; /* Darker shade on hover */
+}
+
+/* Responsive adjustments for mobile devices */
+@media (max-width: 600px) {
+    body {
+        padding: 10px; /* Reduce padding for small screens */
+    }
+    #team-list li {
+        padding: 10px; /* Reduce padding for list items */
+    }
+    button {
+        font-size: 14px; /* Reduce font size for buttons */
+        padding: 8px 16px; /* Reduce button padding */
+    }
+}
