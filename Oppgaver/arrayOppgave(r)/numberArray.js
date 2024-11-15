@@ -234,6 +234,157 @@ function parseNumbers(str) {
     return str.split(/[^\d.-]/).filter(x => x !== '' && !isNaN(x)).map(n => parseFloat(n));
 }
 
+/**
+ * Standard deviation of an array of numbers.
+ * @param {Number[]} numbers An array of numbers.
+ * @returns {Number} The standard deviation of the numbers in the array.
+ */
+function standardDeviation(numbers) {
+    if (!Array.isArray(numbers)) {
+        console.log("Input is not an array!");
+        return 0;
+    }
+    let mean = sum(numbers) / numbers.length;
+    let variance = numbers.reduce((acc, n) => acc + Math.pow(n - mean, 2), 0) / numbers.length;
+    return Math.sqrt(variance);
+}
+
+/**
+ * Median of an array of numbers.
+ * @param {Number[]} numbers An array of numbers.
+ * @returns {Number} The median value.
+ */
+function median(numbers) {
+    if (!Array.isArray(numbers)) {
+        console.log("Input is not an array!");
+        return 0;
+    }
+    let sorted = [...numbers].sort((a, b) => a - b);
+    let mid = Math.floor(sorted.length / 2);
+    return sorted.length % 2 !== 0 ? sorted[mid] : (sorted[mid - 1] + sorted[mid]) / 2;
+}
+
+/**
+ * Mode of an array of numbers.
+ * @param {Number[]} numbers An array of numbers.
+ * @returns {Number[]} The mode value(s).
+ */
+function mode(numbers) {
+    if (!Array.isArray(numbers)) {
+        console.log("Input is not an array!");
+        return [];
+    }
+    let frequencyMap = {};
+    numbers.forEach(num => frequencyMap[num] = (frequencyMap[num] || 0) + 1);
+    let maxFrequency = Math.max(...Object.values(frequencyMap));
+    return Object.keys(frequencyMap).filter(num => frequencyMap[num] === maxFrequency).map(Number);
+}
+
+/**
+ * Range of an array of numbers.
+ * @param {Number[]} numbers An array of numbers.
+ * @returns {Number} The range of the numbers in the array.
+ */
+function range(numbers) {
+    if (!Array.isArray(numbers)) {
+        console.log("Input is not an array!");
+        return 0;
+    }
+    return Math.max(...numbers) - Math.min(...numbers);
+}
+
+/**
+ * Factorial of each number in an array.
+ * @param {Number[]} numbers An array of numbers.
+ * @returns {Number[]} An array of factorials of each number.
+ */
+function factorialArray(numbers) {
+    if (!Array.isArray(numbers)) {
+        console.log("Input is not an array!");
+        return [];
+    }
+    return numbers.map(n => {
+        if (n < 0 || !Number.isInteger(n)) return NaN;
+        return n === 0 ? 1 : Array.from({ length: n }, (_, i) => i + 1).reduce((a, b) => a * b, 1);
+    });
+}
+
+/**
+ * Frequency count of each number in an array.
+ * @param {Number[]} numbers An array of numbers.
+ * @returns {Object} An object representing the frequency of each number.
+ */
+function numberFrequency(numbers) {
+    if (!Array.isArray(numbers)) {
+        console.log("Input is not an array!");
+        return {};
+    }
+    return numbers.reduce((freq, num) => {
+        freq[num] = (freq[num] || 0) + 1;
+        return freq;
+    }, {});
+}
+
+/**
+ * Squares each number in an array.
+ * @param {Number[]} numbers An array of numbers.
+ * @returns {Number[]} A new array containing the squares of the original array.
+ */
+function square(numbers) {
+    if (!Array.isArray(numbers)) {
+        console.log("Input is not an array!");
+        return [];
+    }
+    return numbers.map(n => n * n);
+}
+
+/**
+ * Counts the odd numbers in an array.
+ * @param {Number[]} numbers An array of numbers.
+ * @returns {Number} The count of odd numbers in the array.
+ */
+function countOdd(numbers) {
+    if (!Array.isArray(numbers)) {
+        console.log("Input is not an array!");
+        return 0;
+    }
+    return numbers.filter(n => n % 2 !== 0).length;
+}
+
+/**
+ * Cumulative sum of an array of numbers.
+ * @param {Number[]} numbers An array of numbers.
+ * @returns {Number[]} An array of cumulative sums.
+ */
+function cumulativeSum(numbers) {
+    if (!Array.isArray(numbers)) {
+        console.log("Input is not an array!");
+        return [];
+    }
+    return numbers.reduce((acc, n, i) => {
+        acc.push((acc[i - 1] || 0) + n);
+        return acc;
+    }, []);
+}
+
+/**
+ * Filters elements divisible by a given number.
+ * @param {Number[]} numbers An array of numbers.
+ * @param {Number} divisor The divisor.
+ * @returns {Number[]} An array of numbers divisible by the divisor.
+ */
+function divisibleBy(numbers, divisor) {
+    if (!Array.isArray(numbers)) {
+        console.log("Input is not an array!");
+        return [];
+    }
+    if (!Number.isInteger(divisor) || divisor === 0) {
+        console.log("Invalid divisor!");
+        return [];
+    }
+    return numbers.filter(n => n % divisor === 0);
+}
+
 let result = {
     "Numbers": (i => i),
     "Reversed": reverse,
@@ -250,7 +401,17 @@ let result = {
     "Multiply by 69": mult69,
     "Product": product,
     "Length": length,
-    "Absolute Values": absoluteValues
+    "Absolute Values": absoluteValues,
+    "Standard Deviation": standardDeviation,
+    "Median": median,
+    "Mode": mode,
+    "Range": range,
+    "Factorial Array": factorialArray,
+    "Number Frequency": numberFrequency,
+    "Square": square,
+    "Count Odd": countOdd,
+    "Cumulative Sum": cumulativeSum,
+    "Divisible By": divisibleBy
 };
 
 let option = "Numbers";
