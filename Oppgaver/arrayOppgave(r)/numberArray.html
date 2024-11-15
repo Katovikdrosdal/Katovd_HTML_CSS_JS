@@ -1,28 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Display Array</title>
-		<link rel="stylesheet" href="numberArray.css" />
-	</head>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Divisor Input Example</title>
+    <link rel="stylesheet" href="numberArray.css" />
+</head>
+<body>
+    <div class="container">
+        <h1>Array Operations</h1>
+        <div>
+            <label for="input">Input numbers:</label>
+            <input type="text" id="input" oninput="update()" />
+        </div>
+        <div>
+            <label for="divisor">Input divisor:</label>
+            <input type="number" id="divisor" oninput="updateDivisor()" />
+        </div>
+        <div id="buttons"></div>
+        <p id="option"></p>
+        <p id="result"></p>
+    </div>
 
-	<body>
-		<div class="container">
-			<h1>Array Values</h1>
-			<div>
-				<label for="input">Input numbers:</label>
-				<input type="text" id="input" oninput="update()" />
-			</div>
-			<div id="buttons"></div>
-			<p id="option"></p>
-			<p id="result"></p>
-		</div>
+    <div class="dark-mode-toggle" onclick="toggleDarkMode()">
+        <i class="moon-icon"></i>
+    </div>
 
-		<div class="dark-mode-toggle" onclick="toggleDarkMode()">
-			<i class="moon-icon"></i>
-		</div>
-
-		<script src="numberArray.js"></script>
-	</body>
+    <script src="numberArray.js"></script>
+</body>
 </html>
