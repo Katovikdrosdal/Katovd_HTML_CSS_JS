@@ -1,5 +1,5 @@
 
- function toggleDarkMode() {
+function toggleDarkMode() {
     document.body.classList.toggle('dark-mode');
 }
 
@@ -49,7 +49,7 @@ function everyOther(arr) {
 /**
  * Every number less than 10.
  * @param {Number[]} numbers An array.
- * @returns {TNumber[]} A new array containing every element of the original array that is less than 10.
+ * @returns {Number[]} A new array containing every element of the original array that is less than 10.
  */
 function lessThanTen(numbers) {
     if (!Array.isArray(numbers)) {
@@ -62,7 +62,7 @@ function lessThanTen(numbers) {
 /**
  * Every even number in an array.
  * @param {Number[]} numbers An array of numbers.
- * @returns {Number} An array containing all even numbers of the original array.
+ * @returns {Number[]} An array containing all even numbers of the original array.
  */
 function even(numbers) {
     if (!Array.isArray(numbers)) {
@@ -88,7 +88,7 @@ function sum(numbers) {
 /**
  * Every prime number in an array.
  * @param {Number[]} numbers An array of numbers.
- * @returns {Number} An array containing all prime numbers of the original array.
+ * @returns {Number[]} An array containing all prime numbers of the original array.
  */
 function primes(numbers) {
     if (!Array.isArray(numbers)) {
@@ -198,6 +198,42 @@ function product(numbers) {
     return numbers.reduce((prod, n) => prod * n, 1);
 }
 
+/**
+ * Length of an array.
+ * @template T Type of elements in the array.
+ * @param {T[]} arr An array.
+ * @returns {Number} The length of the array.
+ */
+function length(arr) {
+    if (!Array.isArray(arr)) {
+        console.log("Input is not an array!");
+        return 0;
+    }
+    return arr.length;
+}
+
+/**
+ * Converts all values to absolute values.
+ * @param {Number[]} numbers An array of numbers.
+ * @returns {Number[]} A new array containing the absolute values of the original array.
+ */
+function absoluteValues(numbers) {
+    if (!Array.isArray(numbers)) {
+        console.log("Input is not an array!");
+        return [];
+    }
+    return numbers.map(n => Math.abs(n));
+}
+
+/**
+ * Parse a string of numbers (including decimals) separated by anything that is not a number.
+ * @param {String} str A string of numbers separated by non-numeric characters.
+ * @return {Number[]} An array of numbers.
+ */
+function parseNumbers(str) {
+    return str.split(/[^\d.-]/).filter(x => x !== '' && !isNaN(x)).map(n => parseFloat(n));
+}
+
 let result = {
     "Numbers": (i => i),
     "Reversed": reverse,
@@ -213,7 +249,9 @@ let result = {
     "Sort": sort,
     "Multiply by 69": mult69,
     "Product": product,
-}
+    "Length": length,
+    "Absolute Values": absoluteValues
+};
 
 let option = "Numbers";
 
@@ -234,33 +272,6 @@ function update() {
         r = r.join(", ");
     document.getElementById("result").innerText = r;
 }
-
-/**
- * Converts all values to absolute values.
- * @param {Number[]} numbers An array of numbers.
- * @returns {Number[]} A new array containing the absolute values of the original array.
- */
-function absoluteValues(numbers) {
-    if (!Array.isArray(numbers)) {
-        console.log("Input is not an array!");
-        return [];
-    }
-    return numbers.map(n => Math.abs(n));
-}
-
-// Adding the absoluteValues function to the available operations
-result["Absolute Values"] = absoluteValues;
-
-
-/**
- * Parse a string of numbers (including decimals) separated by anything that is not a number.
- * @param {String} str A string of numbers separated by non-numeric characters.
- * @return {Number[]} An array of numbers.
- */
-function parseNumbers(str) {
-    return str.split(/[^\d.-]/).filter(x => x !== '' && !isNaN(x)).map(n => parseFloat(n));
-}
-
 
 // generate html buttons
 for (let [name, f] of Object.entries(result)) {
