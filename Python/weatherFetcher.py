@@ -1,6 +1,15 @@
+import os
 import requests
 import json
+from dotenv import load_dotenv
 
+# Load environment variables from .env file
+load_dotenv("weatherAPI.env")
+
+# Access the API key
+api_key = os.getenv('WEATHER_API_KEY')
+
+# Function to fetch weather data
 def get_weather(city, api_key):
     base_url = "http://api.weatherapi.com/v1/forecast.json"
     params = {
@@ -18,6 +27,7 @@ def get_weather(city, api_key):
     except requests.exceptions.RequestException as e:
         print(f"An error occurred: {e}")
 
+# Function to display weather information
 def print_weather_info(weather_data):
     city = weather_data["location"]["name"]
     country = weather_data["location"]["country"]
@@ -36,7 +46,7 @@ def print_weather_info(weather_data):
     print(f"Feels Like: {feels_like} °C")
     print(f"Chance of snow: {chance_of_snow}%")
 
+# Example usage
 if __name__ == "__main__":
-    api_key = "57517be54853443897e171523241811"
     city = input("Enter the name of the city: ")
     get_weather(city, api_key)
