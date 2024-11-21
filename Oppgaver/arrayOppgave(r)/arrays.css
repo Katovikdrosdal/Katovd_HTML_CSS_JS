@@ -1,0 +1,78 @@
+/* General Styling */
+body {
+    background: linear-gradient(145deg, #2c2c2c, #1a1a1a); /* Dark mode gradient */
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #f5f5f5; /* Light text for readability in dark mode */
+}
+
+h1 {
+    font-size: 1.8rem;
+    margin: 20px 0 10px;
+    text-align: center;
+    color: #f5f5f5; /* Light text color */
+}
+
+.row-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 30px; /* Consistent padding for spacing */
+    margin-bottom: 40px;
+}
+
+.card {
+    background: linear-gradient(145deg, #3a3a3a, #2d2d2d); /* Dark mode gradient for cards */
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5), -4px -4px 10px rgba(255, 255, 255, 0.1); /* Softer shadows for dark mode */
+    padding: 25px;
+    border-radius: 15px;
+    opacity: 0; /* Initial state for fade-in animation */
+    animation: fadeIn 0.8s ease-in-out forwards;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    color: #f5f5f5; /* Light text for dark cards */
+}
+
+/* Alternate background colors for cards */
+.card:nth-child(odd) {
+    background: linear-gradient(145deg, #444444, #363636); /* Slightly lighter variant */
+}
+
+.card:nth-child(even) {
+    background: linear-gradient(145deg, #3a3a3a, #2d2d2d); /* Default */
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.8), -8px -8px 15px rgba(255, 255, 255, 0.2); /* Enhanced hover for dark mode */
+    background: linear-gradient(145deg, #484848, #3c3c3c); /* Slightly brighter */
+}
+
+.card h1 {
+    font-size: 1.5rem;
+    margin: 0 0 10px;
+    color: #f9f9f9; /* Bright text for titles */
+}
+
+.card h2 {
+    font-size: 1.2rem;
+    color: #cccccc; /* Softer text for subtitles */
+    margin: 0 0 10px;
+}
+
+.card p {
+    font-size: 1rem;
+    color: #bfbfbf; /* Light text for details */
+    margin: 0;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
