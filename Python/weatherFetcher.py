@@ -16,7 +16,7 @@ def get_weather(city, api_key):
         'key': api_key,
         'q': city,
         'days': 1,  # get forecast for today
-        'aqi': 'no'  # disable air quality index
+        'aqi': 'yes'  # enable air quality index
     }
     try:
         response = requests.get(base_url, params=params)
