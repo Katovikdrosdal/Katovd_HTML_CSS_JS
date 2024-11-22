@@ -92,6 +92,21 @@ h1 {
     color: white;
 }
 
+#general-filters button {
+    background-color: #444;
+    color: #f5f5f5;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#general-filters button:hover {
+    background-color: #555;
+}
+
+
 /* Fade-in animation */
 @keyframes fadeIn {
     from {

@@ -408,6 +408,52 @@ function createFilterButtons(container, items, type) {
   });
 }
 
+
+const showNoneButton = document.getElementById("show-none-button");
+let isShowingNone = true; // Track the state, default to "Show None"
+
+// Function to render items dynamically
+function displayFilteredItems(type, filterValue = null) {
+    if (type === "people") {
+        const filteredPeople = filterValue
+            ? people.filter(person => person.occupation === filterValue)
+            : people;
+        peopleContainer.innerHTML = filteredPeople.map(printOut).join("");
+    } else if (type === "cars") {
+        const filteredCars = filterValue
+            ? cars.filter(car => car.make === filterValue)
+            : cars;
+        carsContainer.innerHTML = filteredCars.map(printOut).join("");
+    }
+}
+
+// Toggle between showing none and all items
+function toggleShowNone() {
+    if (isShowingNone) {
+        // Show all items
+        displayFilteredItems("people");
+        displayFilteredItems("cars");
+        showNoneButton.textContent = "Show None";
+    } else {
+        // Hide all items
+        peopleContainer.innerHTML = "";
+        carsContainer.innerHTML = "";
+        showNoneButton.textContent = "Show All";
+    }
+    isShowingNone = !isShowingNone; // Toggle state
+}
+
+// Attach event listener to the button
+showNoneButton.addEventListener("click", toggleShowNone);
+
+// Set default state to "Show None" on page load
+document.addEventListener("DOMContentLoaded", () => {
+    peopleContainer.innerHTML = ""; // Clear people section
+    carsContainer.innerHTML = ""; // Clear cars section
+    showNoneButton.textContent = "Show All"; // Update button text
+});
+
+
 // Reset active class for buttons
 function resetActiveButtons(container) {
   container.querySelectorAll("button").forEach(button => {
