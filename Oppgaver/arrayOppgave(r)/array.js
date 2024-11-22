@@ -408,6 +408,42 @@ function createFilterButtons(container, items, type) {
   });
 }
 
+const togglePeopleButton = document.getElementById("toggle-people-button");
+const toggleCarsButton = document.getElementById("toggle-cars-button");
+
+let arePeopleVisible = true; // Track visibility state
+let areCarsVisible = true;
+
+function toggleVisibility(type) {
+    if (type === "people") {
+        if (arePeopleVisible) {
+            peopleContainer.innerHTML = ""; // Hide people
+            togglePeopleButton.textContent = "Show People";
+        } else {
+            displayFilteredItems("people"); // Show people
+            togglePeopleButton.textContent = "Hide People";
+        }
+        arePeopleVisible = !arePeopleVisible;
+    } else if (type === "cars") {
+        if (areCarsVisible) {
+            carsContainer.innerHTML = ""; // Hide cars
+            toggleCarsButton.textContent = "Show Cars";
+        } else {
+            displayFilteredItems("cars"); // Show cars
+            toggleCarsButton.textContent = "Hide Cars";
+        }
+        areCarsVisible = !areCarsVisible;
+    }
+}
+
+// Attach event listeners to the buttons
+togglePeopleButton.addEventListener("click", () => toggleVisibility("people"));
+toggleCarsButton.addEventListener("click", () => toggleVisibility("cars"));
+
+// Ensure initial display
+displayFilteredItems("people");
+displayFilteredItems("cars");
+
 
 const showNoneButton = document.getElementById("show-none-button");
 let isShowingNone = true; // Track the state, default to "Show None"

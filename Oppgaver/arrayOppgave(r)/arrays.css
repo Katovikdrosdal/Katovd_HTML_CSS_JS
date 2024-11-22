@@ -106,6 +106,12 @@ h1 {
     background-color: #555;
 }
 
+#general-filters button:active {
+    background-color: #007BFF;
+    color: white;
+}
+
+
 
 /* Fade-in animation */
 @keyframes fadeIn {
