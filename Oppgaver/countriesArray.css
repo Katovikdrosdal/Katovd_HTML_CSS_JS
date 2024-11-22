@@ -2,15 +2,14 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(75deg, #ac35a899, #220404d9);
-    color: #000000;
+    background: linear-gradient(75deg, #2d033b, #0b0016);
+    color: #d1c4e9; /* Soft purple for text contrast */
 }
 
 header {
     text-align: center;
     padding: 20px;
-    background-color: linear-gradient(55deg, #000000, #000000);
-    color: white;
+    color: #f3e5f5; /* Light purple for text */
 }
 
 h1 {
@@ -27,24 +26,25 @@ h1 {
 
 .country-card {
     width: 300px;
-    border: 1px solid #ccc;
+    border: 1px solid #4a148c; /* Subtle purple border */
     border-radius: 10px;
     overflow: hidden;
-    background-color: linear-gradient(55deg, #000000, #c7a1a1);
-    color: #ccc;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(55deg, #1e002e, #3b0066);
+    color: #e1bee7; /* Lighter purple for text */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
     transition: transform 0.2s;
-    
 }
 
 .country-card:hover {
     transform: scale(1.05);
+    background: linear-gradient(55deg, #4a0072, #2d033b); /* Brighter purple on hover */
 }
 
 .country-card img {
     width: 100%;
     height: 150px;
     object-fit: cover;
+    border-bottom: 1px solid #4a148c; /* Purple accent line */
 }
 
 .country-card .content {
@@ -55,10 +55,12 @@ h1 {
 .country-card h2 {
     margin: 10px 0;
     font-size: 1.5em;
+    color: #d1c4e9; /* Text matches body for consistency */
 }
 
 .country-card p {
     margin: 5px 0;
     font-size: 1em;
     line-height: 1.5;
+    color: #b39ddb; /* Slightly darker purple for supporting text */
 }
