@@ -72,32 +72,90 @@ const cars = [
 ];
 
 function printOut(item) {
-  if (item.name && item.occupation) {
-    // For people
-    return `
-      <div class="card">
-        <h1>${item.name}</h1>
-        <h2>${item.occupation}</h2>
-        <p><strong>City:</strong> ${item.address.city}, ${item.address.country}</p>
-        <p><strong>Email:</strong> ${item.contact.email}</p>
-        <p><strong>Phone:</strong> ${item.contact.phone}</p>
-      </div>
-    `;
-  } else if (item.make && item.model) {
-    // For cars
-    return `
-      <div class="card">
-        <h1>${item.make} ${item.model}</h1>
-        <h2>${item.year}</h2>
-        <p><strong>Owner:</strong> ${item.owner.name}</p>
-        <p><strong>Color:</strong> ${item.specs.color}</p>
-        <p><strong>Specs:</strong> ${item.specs.engine}, ${item.specs.transmission}</p>
-      </div>
-    `;
+  if (item.name) {
+      // For people
+      return `
+          <div class="card">
+              <h1>${item.name}</h1>
+              <p>Age: ${item.age}</p>
+              <p>Occupation: ${item.occupation}</p>
+              <p>Contact: ${item.contact.email}, ${item.contact.phone}</p>
+              <p>Address: ${item.address.city}, ${item.address.country}</p>
+          </div>
+      `;
+  } else if (item.make) {
+      // For cars
+      return `
+          <div class="card">
+              <h1>${item.make} ${item.model}</h1>
+              <p>Year: ${item.year}</p>
+              <p>Owner: ${item.owner.name}</p>
+              <p>Specs: ${item.specs.color}, ${item.specs.engine}, ${item.specs.transmission}</p>
+          </div>
+      `;
   }
-  return "";
+  return '';
 }
 
-// Render people and cars in separate containers
-peopleContainer.innerHTML = people.map(printOut).join("");
-carsContainer.innerHTML = cars.map(printOut).join("");
+
+const occupationFilters = document.getElementById("occupation-filters");
+const carBrandFilters = document.getElementById("car-brand-filters");
+
+const uniqueOccupations = [...new Set(people.map(person => person.occupation))];
+const uniqueCarBrands = [...new Set(cars.map(car => car.make))];
+
+// Helper function to display filtered items
+function displayFilteredItems(type, filterValue = null) {
+  if (type === "people") {
+    const filteredPeople = filterValue
+      ? people.filter(person => person.occupation === filterValue)
+      : people;
+    peopleContainer.innerHTML = filteredPeople.map(printOut).join("");
+  } else if (type === "cars") {
+    const filteredCars = filterValue
+      ? cars.filter(car => car.make === filterValue)
+      : cars;
+    carsContainer.innerHTML = filteredCars.map(printOut).join("");
+  }
+}
+
+// Generate filter buttons dynamically
+function createFilterButtons(container, items, type) {
+  // Add a "Show All" button
+  const allButton = document.createElement("button");
+  allButton.textContent = "Show All";
+  allButton.classList.add("active");
+  allButton.addEventListener("click", () => {
+    resetActiveButtons(container);
+    allButton.classList.add("active");
+    displayFilteredItems(type);
+  });
+  container.appendChild(allButton);
+
+  // Add buttons for unique values
+  items.forEach(item => {
+    const button = document.createElement("button");
+    button.textContent = item;
+    button.addEventListener("click", () => {
+      resetActiveButtons(container);
+      button.classList.add("active");
+      displayFilteredItems(type, item);
+    });
+    container.appendChild(button);
+  });
+}
+
+// Reset active class for buttons
+function resetActiveButtons(container) {
+  container.querySelectorAll("button").forEach(button => {
+    button.classList.remove("active");
+  });
+}
+
+// Create buttons for filters
+createFilterButtons(occupationFilters, uniqueOccupations, "people");
+createFilterButtons(carBrandFilters, uniqueCarBrands, "cars");
+
+// Initial display of all items
+displayFilteredItems("people");
+displayFilteredItems("cars");
