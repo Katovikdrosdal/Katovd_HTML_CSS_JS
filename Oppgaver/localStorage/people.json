@@ -1,0 +1,38 @@
+[
+    {
+      "firstName": "Alice",
+      "lastName": "Johnson",
+      "age": 25,
+      "profession": "Software Developer",
+      "city": "New York"
+    },
+    {
+      "firstName": "Bob",
+      "lastName": "Smith",
+      "age": 30,
+      "profession": "Graphic Designer",
+      "city": "San Francisco"
+    },
+    {
+      "firstName": "Charlie",
+      "lastName": "Brown",
+      "age": 35,
+      "profession": "Teacher",
+      "city": "Chicago"
+    },
+    {
+      "firstName": "Daisy",
+      "lastName": "Williams",
+      "age": 28,
+      "profession": "Nurse",
+      "city": "Seattle"
+    },
+    {
+      "firstName": "Eve",
+      "lastName": "King",
+      "age": 40,
+      "profession": "Entrepreneur",
+      "city": "Austin"
+    }
+  ]
+  

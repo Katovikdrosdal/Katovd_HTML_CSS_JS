@@ -1,0 +1,21 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    margin: 0;
+    transition: background-color 0.3s ease-in-out;
+}
+
+h2 {
+    color: #333;
+}
+
+label, p {
+    margin-bottom: 10px;
+    display: block;
+}
+
+select {
+    margin-top: 10px;
+    padding: 5px;
+    font-size: 16px;
+}

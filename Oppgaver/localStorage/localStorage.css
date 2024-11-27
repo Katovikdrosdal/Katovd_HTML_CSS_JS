@@ -1,0 +1,74 @@
+/* General styles for the entire page */
+body {
+    font-family: Arial, sans-serif; /* Sets a clean and modern font */
+    margin: 0; /* Removes default margin */
+    padding: 0; /* Removes default padding */
+    display: flex; /* Uses flexbox for centering */
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */
+    height: 100vh; /* Makes the height fill the entire viewport */
+    background-color: #121212; /* Dark background for dark mode */
+    color: #e0e0e0; /* Light text color for better contrast */
+}
+
+/* Container styling for the form and message */
+.container {
+    text-align: center; /* Centers text inside the container */
+    background: #1e1e1e; /* Slightly lighter dark background */
+    padding: 20px; /* Adds space inside the container */
+    border-radius: 8px; /* Rounds the corners for a modern look */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+}
+
+/* Styles for the form container */
+form {
+    margin-top: 20px; /* Adds space between the welcome message and form */
+    display: flex; /* Uses flexbox for alignment */
+    flex-direction: column; /* Stacks elements vertically */
+    align-items: center; /* Centers child elements horizontally */
+}
+
+/* Styling for the labels */
+label {
+    text-align: center; /* Centers the text of the labels */
+    display: block; /* Ensures labels behave as block elements */
+    width: 100%; /* Makes labels span the full width of the container */
+    margin: 10px 0 5px; /* Adds space above and below each label */
+    color: #e0e0e0; /* Light text color for better contrast */
+}
+
+/* Styling for the input fields */
+input {
+    width: 80%; /* Limits input width to 80% of the container */
+    padding: 8px; /* Adds space inside the input field */
+    margin-bottom: 10px; /* Adds space below each input */
+    border: 1px solid #444; /* Subtle border for input fields */
+    border-radius: 4px; /* Slight rounding for a smooth look */
+    text-align: center; /* Centers the text inside the input fields */
+    background-color: #2a2a2a; /* Dark background for input fields */
+    color: #e0e0e0; /* Light text color inside input fields */
+}
+
+/* Styling for the submit button */
+button {
+    background-color: #007bff; /* Blue background for the button */
+    color: #fff; /* White text for contrast */
+    border: none; /* Removes the default button border */
+    padding: 10px 20px; /* Adds padding inside the button */
+    border-radius: 4px; /* Rounds the corners slightly */
+    cursor: pointer; /* Changes cursor to a pointer on hover */
+    margin-top: 10px; /* Adds space above the button */
+    width: auto; /* Makes button size adjust to its content */
+    transition: background-color 0.3s ease; /* Smooth transition for hover */
+}
+
+/* Hover effect for the button */
+button:hover {
+    background-color: #0056b3; /* Darker blue on hover for feedback */
+}
+
+/* Focus styles for inputs and buttons */
+input:focus, button:focus {
+    outline: 2px solid #007bff; /* Blue outline for accessibility */
+    outline-offset: 2px;
+}
