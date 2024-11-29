@@ -1,9 +1,8 @@
 fetch("https://jsonplaceholder.typicode.com/comments/")
-.then(response => response.json()) // Convert response to JSON
+.then(response => response.json())
 .then(data => {
   const container = document.getElementById('comments-container');
 
-  // Iterate through the comments and display them
   data.forEach(comment => {
     const commentDiv = document.createElement('div');
     commentDiv.className = 'comment';
