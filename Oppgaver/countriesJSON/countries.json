@@ -1,0 +1,33 @@
+[
+    {
+      "name": "Norway",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Flag_of_Norway.svg",
+      "capital": "Oslo",
+      "population": 5421241
+    },
+    {
+      "name": "Canada",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/c/cf/Flag_of_Canada.svg",
+      "capital": "Ottawa",
+      "population": 38131104
+    },
+    {
+      "name": "Japan",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/9/9e/Flag_of_Japan.svg",
+      "capital": "Tokyo",
+      "population": 125584662
+    },
+    {
+      "name": "Brazil",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/0/05/Flag_of_Brazil.svg",
+      "capital": "Brasília",
+      "population": 214326223
+    },
+    {
+      "name": "Australia",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/b/b9/Flag_of_Australia.svg",
+      "capital": "Canberra",
+      "population": 26068755
+    }
+  ]
+  
