@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electricity Prices</title>
+    <link rel="stylesheet" href="ePrice.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Electricity Price Analysis</h1>
+        <div>
+            <button id="show-average">Show Average Price</button>
+            <button id="show-over-two">Show Prices Over NOK 2</button>
+            <button id="show-sorted">Show Sorted Prices</button>
+        </div>
+        <div id="average-price-section" class="section hidden">
+            <p>The average price for electricity per day in the current month was:</p>
+            <p id="average-price"></p>
+        </div>
+        <div id="over-two-section" class="section hidden">
+            <p>The electricity price was over NOK 2 for <span id="over-two-count"></span> days this month:</p>
+            <ul id="over-two-list"></ul>
+        </div>
+        <div id="sorted-prices-section" class="section hidden">
+            <p>The electricity prices for the various days of the month in ascending order:</p>
+            <ul id="sorted-prices-list"></ul>
+        </div>
+    </div>
+    <script src="ePrice.js"></script>
+</body>
+</html>
