@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Node Graph Simulator</title>
+		<link rel="stylesheet" href="graph-styles.css" />
+		<script src="https://d3js.org/d3.v7.min.js"></script>
+	</head>
+
+	<body>
+		<div class="container">
+			<div class="sidebar">
+				<h2>Graph Controls</h2>
+				<button id="add-node">Add Node</button>
+				<button id="add-edge">Add Edge</button>
+				<button id="edit-weights">Edit Weights</button>
+				<button id="run-bfs">Run BFS</button>
+				<button id="run-dfs">Run DFS</button>
+				<button id="run-dijkstra">Run Dijkstra</button>
+				<button id="save-graph">Save Graph</button>
+				<button id="load-graph">Load Graph</button>
+				<button id="undo">Undo</button>
+				<button id="redo">Redo</button>
+				<label>
+					<input type="checkbox" id="dark-mode-toggle" /> Dark Mode
+				</label>
+
+				<label for="search-node">Search Node:</label>
+				<input type="text" id="search-node" placeholder="Enter node ID" />
+				<button id="search-node-btn">Search</button>
+
+				<label for="node-name">Node Name:</label>
+				<input type="text" id="node-name" placeholder="Enter node name" />
+				<button id="add-named-node">Add Node with Name</button>
+			</div>
+			<div class="graph-area" id="graph-area"></div>
+			<div class="tooltip" id="tooltip"></div>
+		</div>
+		<script src="graph-simulator.js"></script>
+		<script src="algorithms.js"></script>
+		<script src="storage.js"></script>
+	</body>
+</html>
